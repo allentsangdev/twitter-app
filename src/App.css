@@ -29,7 +29,20 @@ body{
     cursor: pointer;
 }
 
-#time-comment {
+.time-comment-like {
     display: flex;
-    gap: 10px ;
+    flex-wrap: nowrap;
+    gap: 10px;
+    flex-direction: row;
+    width: 300px;
+}
+
+.like-button {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.like-button > button {
+    cursor: pointer;
 }

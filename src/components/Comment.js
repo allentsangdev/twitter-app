@@ -1,4 +1,5 @@
 import { useState, useRef } from "react"
+import LikeButton from "./LikeButton"
 import Timer from "./Timer"
 
 function Comment() {
@@ -14,7 +15,8 @@ function Comment() {
         
         setComment((prevState) => ([...prevState, {
             timeStamp: <Timer/>,
-            comment: inputComment
+            comment: inputComment,
+            likeButton: <LikeButton/>
         } ]))
         
         resetInput()
@@ -29,9 +31,10 @@ function Comment() {
     return (
         <div className="comment-session">
             {comments && comments.map(comment =>(
-                <div id="time-comment">
+                <div className="time-comment-like">
                     {comment.timeStamp}
-                    <p key={"key"}>{comment.comment}</p>
+                    <p>{comment.comment}</p>
+                    {comment.likeButton}
                 </div>
                 ))}
             <div>
