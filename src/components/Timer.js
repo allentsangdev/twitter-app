@@ -1,12 +1,12 @@
 // Use moment.js
 
-import React from 'react'
+import moment from 'moment';
 
 function Timer() {
+    const now = moment().format('HH:mm:ss')
+    
     return(
-        <div className='timer'>
-            <p></p>
-        </div>
+        <p className='time-stamp'>{now}</p>
     )
 }
 
