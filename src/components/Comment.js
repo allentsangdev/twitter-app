@@ -2,8 +2,10 @@ import { useState, useRef } from "react"
 import LikeButton from "./LikeButton"
 import Timer from "./Timer"
 
-function Comment() {
+function Comment(props) {
     
+    // assign an unique id for each comment input box html element
+    const key = `input-comment-${props.idKey}`
     // useState hook to update the comment session
     const [comments, setComment] = useState([{}])
     // useRef hook to clear the input box value after posting comment
@@ -11,7 +13,7 @@ function Comment() {
     const resetInput = () => (textInput.current.value="")
     
     function postComment() {
-        let inputComment = document.querySelector("#input-comment").value
+        let inputComment = document.querySelector(`#${key}`).value
         
         setComment((prevState) => ([...prevState, {
             timeStamp: <Timer/>,
@@ -38,7 +40,7 @@ function Comment() {
                 </div>
                 ))}
             <div>
-                <input type="text" id="input-comment" ref={textInput} onKeyDown={EnterKeyListener}/>
+                <input type="text" id={key} ref={textInput} onKeyDown={EnterKeyListener}/>
                 <button onClick={postComment}> Post </button>
             </div>
         </div>
