@@ -22,7 +22,6 @@ function Comment() {
 
     function EnterKeyListener(e) {
         if (e.key === "Enter") {
-            console.log("!!!")
             postComment()
         }
     }
