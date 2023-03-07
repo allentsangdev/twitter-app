@@ -3,8 +3,15 @@ import TweetContainer from './components/TweetContainer';
 
 // Mock Tweet Messagess
 
-const mockTweets = [{
+const mockTweets = [
+  {
     tweetMessage: "Dogecoin is the people's crypto"
+  },
+  {
+    tweetMessage: "Elon is my dad"
+  },
+  {
+    tweetMessage: "Learn to code just to be replaced by ChatGPT :)" 
   }
 ]
 
